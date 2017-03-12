@@ -1,0 +1,95 @@
+@import "varibles";
+@import "responsive";
+.content-page{
+          @include tablet{
+            width: 100%;
+          }
+          @include phone{
+            width: 100%;
+          }
+          @include tiny{
+            width: 100%;
+          }
+  width: 70%;
+  background: #fff;
+  height: auto;
+  float: left;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  .h2-page{
+    font-family: $Fontmain;
+  }
+ .img-page{
+           @include phone{
+              width: 90%;
+              height: 90%;
+           }
+           @include tiny{
+              width: 90%;
+             height: 90%;
+           }
+    width: 50%;
+    height: 50%;
+  }
+  div.text-page{
+          @include phone{
+            font-size: 1.2em;
+            line-height: 1.3;
+            margin: 3%;
+          }
+          @include tiny{
+            font-size: 1.2em;
+            line-height: 1.3;
+            margin: 3%;
+            }
+    color: #545a66;
+    font-family: $FontText;
+    font-size: 1.7em;
+    line-height: 1.2;
+    margin: 10%;
+  }
+}
+.breadcrumbs-page{
+  font-family: $Fontsecond;
+  font-size: 1.3em;
+  margin: 20px 0;
+  a{
+    color: #545a66;
+    text-decoration: none;
+  }
+
+
+}
+div.next_page{
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  float: right;
+  margin-right: 24px;
+  a{
+    font-family: $Fontmain;
+    font-size: 1.4em;
+    text-decoration: none;
+    color: #545a66;
+
+  }
+
+}
+div.prev_page{
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  float: left;
+  margin-left: 25px;
+  a{
+    font-family: $Fontmain;
+    font-size: 1.4em;
+    text-decoration: none;
+    color: #545a66;
+
+
+  }
+
+}

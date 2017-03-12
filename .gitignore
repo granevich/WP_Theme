@@ -1,0 +1,6 @@
+/node_modules
+package.json
+bower.json
+/wp-content/themes/myTheme/app/libs
+/.idea
+/bower_components

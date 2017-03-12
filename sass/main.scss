@@ -1,0 +1,12 @@
+@import "normalize";
+@import "navigation";
+@import "content";
+@import "footer";
+@import "page";
+
+*{
+  box-sizing: border-box;
+}
+body{
+  background: $lightMain;
+}
