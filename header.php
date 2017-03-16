@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>WP_home</title>
+    <title><?php echo get_bloginfo('name');?></title>
 <!--    <link rel="stylesheet" href="css/main.css">-->
     <script
             src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -18,14 +18,32 @@
         <header>
             <nav>
                 <div class="search">
-                    <input type="text" id="search" placeholder="Search">
-                </div>
 
+<!--                    <form role="search" method="get" id="searchform" action="--><?php //echo home_url( '/' ) ?><!--" >-->
+<!--                        <label class="screen-reader-text" for="s">Поиск: </label>-->
+<!--                        <input type="text" value="--><?php //echo get_search_query() ?><!--" name="s" id="s" />-->
+<!--                        <input type="submit" id="searchsubmit" value="найти" />-->
+<!--                    </form>-->
+                    <?php get_search_form(); ?>
+<!--                    <input type="text" id="search" placeholder="Search">-->
+                </div>
+                <div class="humb-visibility">
+                    <div class="menu-humb">
+                        <span class="menu-global menu-top"></span>
+                        <span class="menu-global menu-middle"></span>
+                        <span class="menu-global menu-bottom"></span>
+                    </div>
+                </div>
+                <div class="small-wp-menu">
+                    <?php wp_nav_menu();?>
+                </div>
                 <div class="logo">
-                    <h1><?php echo get_bloginfo('name');?>  <img class="search-icon" src="<?php echo get_template_directory_uri() ;?> /img/magnifier-tool.svg" alt=""></h1>
+                    <h1><a href="http://granevich.com"><?php echo get_bloginfo('name');?></a>  <img class="search-icon" src="<?php echo get_template_directory_uri();?>/img/magnifier-tool.svg" alt=""></h1>
                     <div><?php echo get_bloginfo('description');?></div>
                 </div>
-                <?php wp_nav_menu();?>
+                <div class="large-wp-menu"><?php wp_nav_menu();?></div>
+
+
 <!--                <div class="wrapper_nav">-->
 <!--                    <ul>-->
 <!--                        <li><a href="">Home</a></li>-->

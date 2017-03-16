@@ -1,4 +1,5 @@
 @import "varibles";
+@import "responsive";
 .search{
   display: none;
   background: $mainColor;
@@ -6,6 +7,13 @@
   input{
     width: 100%;
     text-align: center;
+
+  }
+  input[type="submit"]{
+    background: $mainColor;
+    border:$mainColor ;
+    font-family: $Fontmain;
+    font-size: 1.5em;
   }
 }
 .search-icon{
@@ -25,8 +33,16 @@ nav{
   flex-flow: column;
 
   .logo{
+    h1 a{
+
+        text-decoration: none;
+        color: $darkMain;
+
+
+    }
+
     text-align: center;
-    color: $darkMain;
+
     font-family:$Fontmain ;
   }
 
@@ -81,6 +97,7 @@ li.blog{
   display: flex;
   padding: 0;
   list-style-type: none;
+
   li{
     text-align: center;
     margin:  0 15px;
@@ -89,6 +106,122 @@ li.blog{
       text-decoration:none;
       color: $darkMain;
     }
+
+  }
+
+}
+.large-wp-menu{
+  @include phone{
+    display: none;
+  }
+  @include tiny{
+    display: none;
+  }
+  display: block;
+}
+
+
+.humb-visibility{
+  z-index: 100;
+  @include phone{
+    display: block;
+  }
+  @include tiny{
+    display: block;
+  }
+  width: 50px;
+  height: 40px;
+  background: $mainColor;
+  position: fixed;
+  top: 1%;
+  left: 0;
+  display: none;
+
+}
+
+.small-wp-menu{
+  @include desktop{
+    display: none !important;
+  }
+  @include tablet{
+    display: none !important;
+  }
+  z-index: 99;
+  position: fixed;
+  overflow: hidden;
+  top: 0%;
+  left: 0%;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: $mainColor;
+  .menu-main-menu-container{
+    height: 100%;
+  }
+  .menu{
+    z-index: 100;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    li{
+      margin: 0;
+    }
+    .menu-item{
+      margin: 30px;
+      ul{
+        padding: 0;
+
+      }
+       a{
+         @include tiny{
+           font-size: 7vw;
+         }
+        font-size: 5vw;
+      }
+    }
   }
 }
 
+.menu-humb {
+  cursor: pointer;
+
+  padding-left: 1.25em;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  float: left;
+}
+.menu-global {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 2px;
+  border-top: 4px solid $lightMain;
+  width: 45px;
+  transition: 0.55s;
+}
+.menu-top {
+  top: 4px;
+}
+.menu-middle {
+  top: 16px;
+}
+.menu-bottom {
+  top: 28px;
+}
+.menu-top-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(50deg);
+  transition: 0.55s 0.5s;
+}
+.menu-middle-click {
+  opacity: 0;
+}
+.menu-bottom-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(-410deg);
+  transition: 0.55s 0.5s;
+}

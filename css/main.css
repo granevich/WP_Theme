@@ -378,6 +378,11 @@ th {
   .search input {
     width: 100%;
     text-align: center; }
+  .search input[type="submit"] {
+    background: #009688;
+    border: #009688;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5em; }
 
 .search-icon {
   cursor: pointer;
@@ -394,8 +399,10 @@ nav {
   flex-flow: column; }
   nav .logo {
     text-align: center;
-    color: #004D40;
     font-family: "Raleway", sans-serif; }
+    nav .logo h1 a {
+      text-decoration: none;
+      color: #004D40; }
   nav .wrapper_nav ul {
     font-family: "Ubuntu Condensed", sans-serif;
     font-size: 1.5em;
@@ -449,6 +456,108 @@ li.blog {
       text-decoration: none;
       color: #004D40; }
 
+.large-wp-menu {
+  display: block; }
+  @media (min-width: 500px) and (max-width: 767px) {
+    .large-wp-menu {
+      display: none; } }
+  @media (max-width: 499px) {
+    .large-wp-menu {
+      display: none; } }
+
+.humb-visibility {
+  z-index: 100;
+  width: 50px;
+  height: 40px;
+  background: #009688;
+  position: fixed;
+  top: 1%;
+  left: 0;
+  display: none; }
+  @media (min-width: 500px) and (max-width: 767px) {
+    .humb-visibility {
+      display: block; } }
+  @media (max-width: 499px) {
+    .humb-visibility {
+      display: block; } }
+
+.small-wp-menu {
+  z-index: 99;
+  position: fixed;
+  overflow: hidden;
+  top: 0%;
+  left: 0%;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #009688; }
+  @media (min-width: 1024px) {
+    .small-wp-menu {
+      display: none !important; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .small-wp-menu {
+      display: none !important; } }
+  .small-wp-menu .menu-main-menu-container {
+    height: 100%; }
+  .small-wp-menu .menu {
+    z-index: 100;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+    .small-wp-menu .menu li {
+      margin: 0; }
+    .small-wp-menu .menu .menu-item {
+      margin: 30px; }
+      .small-wp-menu .menu .menu-item ul {
+        padding: 0; }
+      .small-wp-menu .menu .menu-item a {
+        font-size: 5vw; }
+        @media (max-width: 499px) {
+          .small-wp-menu .menu .menu-item a {
+            font-size: 7vw; } }
+
+.menu-humb {
+  cursor: pointer;
+  padding-left: 1.25em;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  float: left; }
+
+.menu-global {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 2px;
+  border-top: 4px solid #E0F2F1;
+  width: 45px;
+  transition: 0.55s; }
+
+.menu-top {
+  top: 4px; }
+
+.menu-middle {
+  top: 16px; }
+
+.menu-bottom {
+  top: 28px; }
+
+.menu-top-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(50deg);
+  transition: 0.55s 0.5s; }
+
+.menu-middle-click {
+  opacity: 0; }
+
+.menu-bottom-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(-410deg);
+  transition: 0.55s 0.5s; }
+
 .bg {
   position: absolute;
   top: 0;
@@ -476,9 +585,9 @@ main {
   height: 100%; }
 
 .content {
-  display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  display: flex;
   width: 70%;
   background: #fff;
   height: auto;
@@ -510,7 +619,7 @@ main {
 
 .card {
   height: auto;
-  margin: 5px 0; }
+  margin: 15px 0; }
   @media (min-width: 1024px) {
     .card {
       flex: 0 1 calc(33% - 1em);
@@ -537,17 +646,17 @@ main {
     font-size: 1.3em; }
     @media (min-width: 1024px) {
       .card h2 {
-        font-size: 1.4em;
+        font-size: 1.4vw;
         width: 100%;
         height: 100px; } }
     @media (min-width: 768px) and (max-width: 1023px) {
       .card h2 {
-        font-size: 1.2em;
+        font-size: 2vw;
         width: 100%;
         height: 70px; } }
     @media (min-width: 500px) and (max-width: 767px) {
       .card h2 {
-        font-size: 1.5em;
+        font-size: 3vw;
         width: 100%;
         height: 50px; } }
   .card .thumbnail {
@@ -564,6 +673,30 @@ main {
       .card .description {
         height: 20%;
         width: 100%; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .card .description {
+        height: 35%;
+        width: 100%; } }
+    @media (min-width: 500px) and (max-width: 767px) {
+      .card .description {
+        height: 35%;
+        width: 100%; } }
+    @media (max-width: 499px) {
+      .card .description {
+        height: 25%;
+        width: 100%; } }
+    @media (min-width: 1024px) {
+      .card .description p {
+        font-size: 1.1vw; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .card .description p {
+        font-size: 2vw; } }
+    @media (min-width: 500px) and (max-width: 767px) {
+      .card .description p {
+        font-size: 2.5vw; } }
+    @media (max-width: 499px) {
+      .card .description p {
+        font-size: 4vw; } }
   .card button {
     color: #E0F2F1;
     background: #004D40;
@@ -595,20 +728,52 @@ main {
   .nav-links .current {
     color: #004D40; }
 
-footer {
+footer .first_raw {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
-  height: 300px;
+  height: auto;
   background: #545a66; }
+  footer .first_raw .social {
+    margin-top: 15px; }
+    footer .first_raw .social .icons img {
+      width: 50px;
+      height: 50px;
+      margin-right: 15px; }
+
+footer .search_footer form input[type='text'] {
+  height: 30px; }
+  @media (min-width: 500px) and (max-width: 767px) {
+    footer .search_footer form input[type='text'] {
+      margin-top: 10px;
+      width: 90%; } }
+  @media (max-width: 499px) {
+    footer .search_footer form input[type='text'] {
+      margin-top: 10px;
+      width: 100%; } }
+
+footer .search_footer form input[type='submit'] {
+  height: 30px;
+  color: #E0F2F1;
+  background: #004D40;
+  border: 1px solid #004D40; }
+  @media (min-width: 500px) and (max-width: 767px) {
+    footer .search_footer form input[type='submit'] {
+      width: 90%; } }
+  @media (max-width: 499px) {
+    footer .search_footer form input[type='submit'] {
+      width: 100%; } }
 
 .content-page {
   width: 70%;
   background: #fff;
   height: auto;
   float: left;
-  display: flex;
-  justify-content: center;
-  flex-flow: column;
   align-items: center; }
+  .content-page img {
+    width: 100% !important; }
   @media (min-width: 768px) and (max-width: 1023px) {
     .content-page {
       width: 100%; } }
@@ -618,6 +783,8 @@ footer {
   @media (max-width: 499px) {
     .content-page {
       width: 100%; } }
+  .content-page .h2-page {
+    text-align: center; }
   .content-page .h2-page {
     font-family: "Raleway", sans-serif; }
   .content-page .img-page {
@@ -650,18 +817,31 @@ footer {
 
 .breadcrumbs-page {
   font-family: "Inconsolata", monospace;
-  font-size: 1.3em;
-  margin: 20px 0; }
+  font-size: 1.1vw;
+  margin: 20px 0;
+  text-align: center; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .breadcrumbs-page {
+      font-size: 2.2vw; } }
+  @media (min-width: 500px) and (max-width: 767px) {
+    .breadcrumbs-page {
+      font-size: 2.2vw; } }
+  @media (max-width: 499px) {
+    .breadcrumbs-page {
+      font-size: 3vw; } }
   .breadcrumbs-page a {
     color: #545a66;
     text-decoration: none; }
 
 div.next_page {
-  width: 150px;
+  width: 200px;
   height: 50px;
   text-align: center;
   float: right;
   margin-right: 24px; }
+  @media (max-width: 499px) {
+    div.next_page {
+      width: 100px; } }
   div.next_page a {
     font-family: "Raleway", sans-serif;
     font-size: 1.4em;
@@ -669,16 +849,124 @@ div.next_page {
     color: #545a66; }
 
 div.prev_page {
-  width: 150px;
+  width: 200px;
   height: 50px;
   text-align: center;
   float: left;
   margin-left: 25px; }
+  @media (max-width: 499px) {
+    div.prev_page {
+      width: 100px; } }
   div.prev_page a {
     font-family: "Raleway", sans-serif;
     font-size: 1.4em;
     text-decoration: none;
     color: #545a66; }
+
+.alignnone {
+  display: block;
+  width: 80%;
+  height: 80%;
+  margin: auto; }
+
+.comments {
+  width: 50%;
+  margin: auto; }
+  @media (min-width: 500px) and (max-width: 767px) {
+    .comments {
+      width: 80%; } }
+  @media (max-width: 499px) {
+    .comments {
+      width: 100%; } }
+
+.comments-caption {
+  font-family: "Inconsolata", monospace;
+  border-top: 1px solid #009688; }
+
+.commentlist {
+  list-style-type: none; }
+
+.comment p {
+  font-family: "Ubuntu Condensed", sans-serif;
+  padding: 10px;
+  background: white !important; }
+
+.comment .fn {
+  color: #004D40; }
+
+.comment .reply a {
+  font-family: "Inconsolata", monospace;
+  text-decoration: none;
+  color: #004D40; }
+
+.comment .comment-meta {
+  font-family: "Inconsolata", monospace; }
+
+#respond {
+  border-top: 1px solid #009688; }
+  #respond .comment-reply-title {
+    font-family: "Raleway", sans-serif; }
+    #respond .comment-reply-title a {
+      font-family: "Inconsolata", monospace;
+      text-decoration: none;
+      color: #004D40; }
+    #respond .comment-reply-title small a {
+      color: red; }
+  #respond .comment-notes {
+    display: none; }
+  #respond .comment-form-author input {
+    display: block; }
+    @media (min-width: 500px) and (max-width: 767px) {
+      #respond .comment-form-author input {
+        text-align: center;
+        width: 100%;
+        margin: auto; } }
+    @media (max-width: 499px) {
+      #respond .comment-form-author input {
+        text-align: center;
+        width: 100%;
+        margin: auto; } }
+  #respond .comment-form-email input {
+    display: block; }
+    @media (min-width: 500px) and (max-width: 767px) {
+      #respond .comment-form-email input {
+        text-align: center;
+        width: 100%;
+        margin: auto; } }
+    @media (max-width: 499px) {
+      #respond .comment-form-email input {
+        text-align: center;
+        width: 100%;
+        margin: auto; } }
+  #respond .comment-form-comment label {
+    font-family: "Inconsolata", monospace; }
+  #respond .comment-form-comment textarea {
+    width: 100%;
+    font-family: "Ubuntu Condensed", sans-serif; }
+  #respond .form-submit input[type="submit"] {
+    color: #E0F2F1;
+    background: #004D40;
+    border: 1px solid #004D40;
+    padding: 5px; }
+    @media (min-width: 500px) and (max-width: 767px) {
+      #respond .form-submit input[type="submit"] {
+        width: 90%;
+        margin: 0 5% 5%; } }
+    @media (max-width: 499px) {
+      #respond .form-submit input[type="submit"] {
+        width: 90%;
+        margin: 0 5% 5%; } }
+
+.tags ul {
+  display: flex;
+  list-style-type: none; }
+  .tags ul li {
+    margin-right: 10px; }
+    .tags ul li a {
+      color: #004D40; }
+
+.crayon-theme-sublime-text {
+  z-index: 0; }
 
 * {
   box-sizing: border-box; }
